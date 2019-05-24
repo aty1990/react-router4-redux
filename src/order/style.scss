@@ -1,0 +1,59 @@
+$yellow:#FF961F;
+@mixin px1{
+	background: url("../img/px1.png") right bottom repeat-x;
+	background-size: 100% 1px;
+}
+
+.page-order{
+	background: #F5F5F5;
+	.order-container{
+		height: calc(100% - 45px);
+		overflow: hidden;	
+		position: relative;	
+	}
+	.item-group{
+		margin-top: 10px;
+		background: #fff;
+	}
+	.order-title{
+		height: 44px;
+		padding: 0 16px;
+		background: #FAFAFA;
+		@include px1;
+	}
+	.order-content{
+		margin: 16px 0 16px 16px;
+		padding-bottom: 10px;
+		@include px1;
+		p{
+			width: 100%;
+			padding-left: 10px;
+			line-height: 24px;
+		}
+		p.order-items-desc{
+			font-size: 14px;
+			color: #606060;
+		}
+		span.item{
+			font-size: 14px;
+			color: #303030;
+			line-height: 24px;
+		}
+	}
+	.yellow-text{
+		color:$yellow;
+	}
+	.order-btn-group{
+		height: 50px;
+		margin-top: -10px;
+		.order-item-btn{
+			border: 1px solid #CCCCCC;
+			border-radius: 16px;
+			padding: 8px 16px;
+			font-size: 12px;
+			color: #808080;
+			margin-right: 10px;
+		}
+	}
+	
+}

@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin:0;
+  list-style: none;
+  box-sizing:border-box;
+  touch-action: pan-y;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    overflow: hidden;
+    z-index: 99;
+}
+.grow{
+  flex-grow: 1;
+}
+.gray-text{
+  font-family: "PingFangSC-Regular";
+  font-size: 12px;
+  color: #808080;
+  letter-spacing: 0;
+}
+.total-price{
+  font-family: "PingFangSC-Medium";
+  font-size: 22px;
+  color: #004E90;
+  letter-spacing: 0;
+  text-align: right;
+}
+.mg-26{
+  margin-top: -26px;
+}
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grow{
+  flex-grow: 1;
+}
+.text-left{
+  justify-content: flex-start;
+}
+.text-right{
+  justify-content: flex-end;
+}
+.vertical {
+    flex-direction: column;
+}
+.row {
+    flex-direction: row;
+}
+

@@ -1,0 +1,125 @@
+$gray_bg:#F5F5F5;
+$title_bg:#004E90;
+$blue_text:#004E90;
+$white:#fff;
+@import '../mixin';
+
+
+@mixin title{
+   	font-size: px2vw(16);
+	color: #303030;
+}
+
+@mixin subTitle{
+   	font-size: px2vw(14);
+	color: #AAAAAA;
+	letter-spacing: 0;
+}
+.page-car-config{
+	background: $gray_bg;
+	.car-config-content-wrapper{
+		height: calc(100% - 103px);
+		width: 100%;
+		overflow-y:auto;
+	}
+	.config-title{
+		padding: px2vw(16);
+
+		.text-left{
+			font-size: px2vw(16);
+			color: #333333;
+		}
+
+		.reset-config{
+			font-size: px2vw(14);
+			color: $blue_text;
+			letter-spacing: 0;
+		}
+	}
+	.change-btn{
+		font-size: px2vw(14);
+		color:$blue_text;
+	}
+	.config-list-wrapper{
+		background: $white;
+		padding: px2vw(16);
+		li{
+			height: px2vw(70);
+		}
+		.text-title{
+			@include title;
+			margin-left: px2vw(10);
+			letter-spacing: 0;
+		}
+		.sub{
+			@include subTitle;
+		}
+	}
+	.active-wrapper{
+		padding: px2vw(16);
+		background: url("../img/px1.png") $white bottom left repeat-x;
+		background-size: 100% 1px;
+		.content{
+			p{
+				width: 100%;
+				text-align: left;
+				height: px2vw(24);
+				padding-left: px2vw(10);
+			}
+			.title{
+				@include title;
+			}
+			.sub-title{
+				@include subTitle;
+			}
+		}
+	}
+	.desc{
+		margin-top: px2vw(20);
+		padding-left: px2vw(16);
+		margin-bottom: px2vw(20);
+	}
+	.fixed-btn-to-bottom{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100vw;
+		height: px2vw(68);
+		background: #fff;
+		padding: 0 px2vw(16);
+		z-index: 2;
+		.am-button{
+			font-size: px2vw(16);
+		}
+	}
+	.popover-from-bottom{
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		background: rgba(0,0,0,0.7);
+		bottom: 0;
+		left: 0;
+		z-index: 3;
+		transition: background 0.3s linear;
+		transform: translate(0,100%);
+	}
+	.bottom-area{
+		position: fixed;
+		width: 100%;
+		height: px2vw(300);
+		background: #fff;
+		bottom: 0;
+		left: 0;
+		z-index: 4;
+		transform: translate(0,100%);
+		transition: transform 0.3s linear;
+	}
+	.show-popover{
+		transform: translate(0,0);
+		background: rgba(0,0,0,0.4);
+		.bottom-area{
+			transform: translate(0,0);
+		}
+	}
+}
+
