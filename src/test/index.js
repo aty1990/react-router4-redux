@@ -105,6 +105,7 @@ class Test extends Component{
 				</div>
 				<Picker 
 		          	visible={this.state.visible} 
+		          	title="选择购车城市"
 		          	onClose={this.hidePicker} 
 		          	dataSource={this.state.cityObj} 
 		          	onChange={this.onChange}

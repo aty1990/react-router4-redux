@@ -10,6 +10,7 @@ import 'react-bscroll/lib/react-scroll.css'
 import { connect } from 'react-redux';
 import { Link,Switch,Route } from "react-router-dom";
 import Options from '../options';
+import Lazyload from '../lazyload';
 
 import AnimatedRouter from 'aty-react-router-animated'; //导入我们的的AnimatedRouter组件
 
@@ -39,6 +40,9 @@ class CarList extends Component{
     		this.props.history.push( { pathname:this.props.match.path+'/options',search:'?totalPrice='+item.totalPrice+"&spuName="+item.spuName})
     	},200)
     }
+    lazyload(){
+    	this.props.history.push( { pathname:this.props.match.path+'/lazyload'})
+    }
 	render(){
 		const { curIdx } = this.state;
 		const { carlist } = this.props;
@@ -53,7 +57,7 @@ class CarList extends Component{
 							<span className="menu-icon" onClick={this.back.bind(this)}><Icon type='ellipsis'/></span>
 						</div>
 						<img src={svg} alt="" width="100%"/>
-						<span  className="ar"><img src={ar} alt="" width="40"/></span>
+						<span  className="ar" onClick={this.lazyload.bind(this)}><img src={ar} alt="" width="40"/></span>
 						<span className="car-icon"><img src={car2} alt="" width="100%"/></span>
 						<div className="mg-26"><img src={leftIcon} alt="" width="135"/></div>
 						<div className="carlist-wrapper">
@@ -80,6 +84,7 @@ class CarList extends Component{
 				</Scroll>
 				<AnimatedRouter timeout={300}   transitionKey={this.props.location.pathname.split('/').slice(0, 3).join('/')}>
 		         	<Route path={routerRoot+"/options"} component={Options}/>
+		         	<Route path={routerRoot+"/lazyload"} component={Lazyload}/>
 		        </AnimatedRouter>
 			</div>
 		)
